@@ -9,7 +9,8 @@ body {
 }
 
 .container {
-  width: 400px;
+  width: 90%;  /* Adjust width for mobile */
+  max-width: 400px;  /* Restrict max width for large screens */
   background: white;
   padding: 20px;
   border-radius: 10px;
@@ -28,26 +29,27 @@ h2 {
   background: #f9f9f9;
   border-radius: 10px;
 }
+
 form input {
-  width: 100%;
+  width: calc(100% - 20px);
   padding: 10px;
   margin: 5px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
-  color: black !important; /* Ensures black text */
-  background-color: white !important; /* Forces white background */
+  color: black;
+  background: white;
 }
 
 form input:focus {
-  background-color: white !important; /* Ensures white stays when typing */
-  border: 2px solid #28a745; /* Green border for focus */
-  outline: none; /* Removes default focus outline */
+  background-color: white !important;
+  border: 2px solid #28a745;
+  outline: none;
 }
 
 form input::placeholder {
-  color: #777; /* Slightly darker placeholder for better visibility */
-  opacity: 1; /* Ensures placeholder is fully visible */
+  color: #777;
+  opacity: 1;
 }
 
 button {
@@ -94,4 +96,17 @@ h3 {
   margin: 5px 0;
   color: black;
   font-size: 16px;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  form input, button {
+    font-size: 14px;
+    padding: 8px;
+  }
 }
